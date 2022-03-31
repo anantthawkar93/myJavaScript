@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure Example2</title>
+</head>
+<body>
+    <script>
+        function outerFunc(param){
+            var privateVar = 5;
+            var innerFunc = function(input){
+                alert(`param passed to function is ${param} and private variable is ${privateVar}`);
+                var sum = privateVar + input + param;
+                alert(`addition of private var, param and input is ${sum}`);
+            }
+            return innerFunc;
+        }
+        var closureFunc1 = outerFunc(12)
+        closureFunc1(4);
+    </script>
+    
+</body>
+</html>

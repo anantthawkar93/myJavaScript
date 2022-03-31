@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure Example-1</title>
+    <!--
+        A closure is a special kind of variable that combinees a function, 
+        and the environment in which that function was created. 
+        the environment consists of all local variables that were in-scope at that time
+        that when the closure was created. lets understand it in details. 
+        Note that though innerfunc is private function, 
+        if we reture it we can access it from outside the outerfunc. 
+        Along with it, this return innerfunc comes with the environment of the function that it has created. 
+        Thats why  -->
+	
+    -->
+</head>
+<body>
+    <script>
+        function sumAndPower(n){
+            console.log("ran code");
+            let sum = 0;
+            for (let i = 0; i <= n; i++){
+                sum += i;
+            }
+            function sumPower(num){
+                console.log("closure ran func");
+                return Math.pow(sum, num)
+            }
+            return sumPower;
+        }
+        let closureFunc = sumAndPower(2); //0+1+2 = 3
+        alert(closureFunc(3)); // power (3,3)
+		alert(closureFunc(2)); // power (3,2)
+		alert(closureFunc(4)); // power (3,4)
+
+    </script>
+</body>
+</html>

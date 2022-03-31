@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure Example-3</title>
+</head>
+<body>
+    <script>
+        function  TicketGenerator(transportMode){
+            var generateTicket = function(destination){
+                return transportMode + "--" + destination + 123;
+            }
+            return generateTicket;
+        }
+        //Creating two different function as transport mode
+        var flightTicketGenerator = TicketGenerator("Flight");
+        alert(flightTicketGenerator("chennai"));
+
+        var shipTicketGenerator = TicketGenerator("Ship");
+        alert(shipTicketGenerator("singapore"));
+    </script>
+</body>
+</html>
