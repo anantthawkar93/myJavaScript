@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoisting</title>
+    <!--
+        Hoisting simply gives higher specificity to javascript declarations.
+        Thus, it makes the computer program read and process declarations first
+        before analyzing other code in program. 
+
+        Hoisting does not mean JS rearranges or move the code above one another.
+    -->
+</head>
+<body>
+    <script>
+        /*Variable Var declarations no matter where they are,
+        they dont matter as they are moved to the top when js runs the program.
+        this is true for var only
+        When interpreter hoist a variable declared with 'var', it initialised its 
+        value to undefined, unlike "let" or "const" */
+        //let and const are not hoisted.
+        a = 10;
+        var a;
+        alert(a);
+
+        //this doesn't work : will show undefined error
+        // alert(b);
+        // var b;
+        // b = 20;
+
+        //this following code doesn't work : will show reference error
+        alert(b);
+	    let b = 20;
+
+        //this foll0wing code doesn't work : will show reference error
+        alert(c);
+	    const c = 10;
+
+    /*The reason why we get reference error, when we try to access 'let' or 'const'
+    before its declaration is "TEMPORAL DEAD ZONE"
+    The TEMPORAL DEAD ZONE starts at beginning of the variables enclosing
+    scope and ends when it is declared. 
+    Accessing variables in TDZ gives Reference error:
+    so, let or const -> Reference error
+    */
+    </script>
+</body>
+</html>

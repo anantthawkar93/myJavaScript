@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional Hoisting</title>
+    <!--
+        Functional Declarations are Hoisted too!
+        Function hoisting allows us to call function before it is declared
+        or defined.
+    -->
+</head>
+<body>
+    <script>
+        foo();
+
+        function foo(){
+            console.log('foo');
+        }
+        //NOTE: Only function declaration are hoisted not function expressions.
+        /*following code doesn't work will show:
+         Uncaught Type error : fooo is not a function*/
+
+        fooo();
+        var fooo = function(){
+            console.log('fooo');
+        }
+
+        /*following code for let doesn't work will show:
+         Uncaught Reference error : cannot access 'bar' before initialisation
+         Similar case for "const" variable also.
+         */
+        bar();
+        let bar = function(){
+            console.log('bar');
+        }
+
+        //for functions that are never declared:
+        foo();
+        //Uncaught Reference Error: foo is not defined.
+    </script>
+</body>
+</html>
