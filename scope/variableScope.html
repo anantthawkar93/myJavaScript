@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Scope</title>
+</head>
+<body>
+    <script>
+        /*Global Scope: Everthing/anything declared 
+        outside block scope and function scope is Global.*/
+        var studentName = "Anant";
+        alert(`in starting studentName = ${studentName}`);
+
+        //Blocked Scope: A Block of section inside { }
+        {
+            var studentName = "Sumit Sir";
+        alert(`inside the block studentName = ${studentName}`);
+        }
+
+        /*A function is bundle of code we want to place logically together.
+        It is declared using function keyword. 
+        Variable declared inside function has a function scope*/
+        function testName(){
+            var studentName = "Kavita";
+            alert(`inside the block studentName = ${studentName}`);
+        }
+
+        alert(`outside student name = ${studentName}`);
+
+        /*SCOPE:
+        var : for Functional scope level
+        let : for Block scope level
+        const : for bloc scope level
+        */
+
+        /*VARIABLE ACCESSIBILITY before DECLARATION:
+
+        var : 
+        1)In Strict mode - Reference error (variable is not declared).
+        2)Non-strict mode - undefined (variable have undefined value).
+
+        let : Reference error (variable is not declared) for both cases.
+
+        const : Reference error (variable is not declared) for both cases.
+        */
+
+        /*Reassigning New Vaue to Variable in JS
+
+        var: Can reassign a New value to this variable.
+        let: Can reassign a New value to this variable.
+        const : Cannot reassign a New value to this constant variable.
+
+        NOTE: When object is declared and assigned value with const, we can still 
+        change the value of its properties, but cannot reassign any object value to same variable.
+        */
+    </script>
+</body>
+</html>
