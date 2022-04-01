@@ -5,3 +5,10 @@ Javascript  Practice Codes
 1. Variables Scope 
 2. Hoisting
 3. Closure
+4. Objects and Its Methods
+5. Callback functions
+6. Functions
+7. Prototypes
+8. Javascript Map
+9. Filter Method
+10. Reduce Method
