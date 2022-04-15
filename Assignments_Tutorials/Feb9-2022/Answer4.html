@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Answer4</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div id="Div"></div>
+	<script type="text/javascript">
+	
+			Date.prototype.getWhichDay = function(){
+			switch(this.getDay()){
+				case 1: return "Monday";
+				break;
+				case 2: return "Tuesday";
+				break;
+				case 3: return "Wednesday";
+				break;
+				case 4: return "Thrusday";
+				break;
+				case 5: return "Friday";
+				break;
+				case 6: return "Saturday";
+				break;
+				case 7: return "Sunday";
+				break;
+				default: alert("Not a day");
+			}
+		}
+		let currentDate = new Date();
+		let newOb = currentDate.getWhichDay();
+		document.getElementById("Div").innerHTML = newOb;
+
+	</script>
+</body>
+</html>
