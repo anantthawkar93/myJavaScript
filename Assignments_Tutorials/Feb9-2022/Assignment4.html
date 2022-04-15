@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment4</title>
+</head>
+<body>
+	<script>
+	let boolOb = new Boolean(true);
+	Boolean.prototype.convertedValue = function() {
+		if(this.valueOf() == false) {
+			alert("the value is 0");
+		} else {
+			alert("the value is 1");
+		}
+	}
+	
+	boolOb.convertedValue();
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Assignment6</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+	let numOb = new Number(5);
+	Number.prototype.divisibleBy = function() {
+		let number = parseInt(prompt("Enter a number"));
+		if(number % this.valueOf() == 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	let result = numOb.divisibleBy();
+	if(result == true){
+		alert(`Number is divisible by 5`);
+	} else {
+		alert("Number is not divisible by 5");
+	}
+	console.log(result);
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Assignment5</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<div>Sum of All numbers divisible by 7</div>
+	<button onclick="sumOfNosDivBy7()">Click Display</button>
+<script>
+	function sumOfNosDivBy7() {
+		let myarray =  [14,49,91,109,45,12,28,63,105];
+		let sum = 0;
+		for(let i = 0 ; i < myarray.length; i++) {
+			if (myarray[i] % 7 === 0) {
+				console.log(myarray[i]);
+				sum += myarray[i];
+			}
+		}
+		alert(`Sum of numbers divisible by 7 is ${sum}`);
+	
+	let divOb = document.querySelector('div').textContent = "Sum => " + sum;
+}
+</script>
+
+</body>
+</html>
+

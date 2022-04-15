@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Assignment9</title>
+</head>
+<body>
+  <script>
+   
+   let statement = new String();
+    String.prototype.wordCount  = function(str){
+      
+      var count = str. match(/(\w+)/g).length;
+      alert(count);
+    }
+   let str1 = "My name is Anant Thawkar";
+   statement.wordCount(str1);
+    let str2 = "My name is Anant Prabhakar Thawkar";
+   statement.wordCount(str2);
+   
+  </script>
+  
+</body>
+</html>

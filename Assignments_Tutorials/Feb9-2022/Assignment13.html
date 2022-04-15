@@ -1,0 +1,27 @@
+<<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Assignment13</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+	let numOb = new Array(4,5,6,2,1,1,4);
+	Array.prototype.averageRounded = function(x) {
+		let average = 0;
+		let sum = 0;
+		for(let i = 0; i < numOb.length; i++){
+				sum += numOb[i];
+		}
+		average = (sum / numOb.length);
+		return average.toFixed(x);
+	}
+	
+	let result = numOb.averageRounded(3);
+	alert(`Average rounded Value is ${result}`);
+	console.log(result);
+</script>
+</body>
+</html>

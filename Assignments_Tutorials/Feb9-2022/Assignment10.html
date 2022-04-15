@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Assignment9</title>
+</head>
+<body>
+  <script>
+  let strOb = new String("Find the longest word in this statement");
+  String.prototype.biggestWord = function() {
+    let words = [];
+    let splitword = this.split(' ');
+    console.log(splitword);
+    let longest = "";
+    for(let i = 0; i < splitword.length; i++){
+      if(splitword[i].length > longest.length){
+        longest = splitword[i];
+      }
+    }
+    words = splitword.filter(word => word.length == longest.length);
+    return words;
+  }
+  
+  let result = strOb.biggestWord();
+  alert(strOb);
+  alert(`Longest word : ${result} `);
+  console.log(result);
+</script>
+  
+</body>
+</html>

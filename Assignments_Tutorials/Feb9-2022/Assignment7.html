@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Assignment7</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+	let arrOb = new Array(14,49,91,109,45,12,28,63,105);
+	let sum = 0;
+	Array.prototype.sumDivisible = function(n) {
+		let sum = 0;
+		for(let i = 0 ; i < this.length; i++) {
+			if (this[i] % n === 0) {
+				console.log(this[i]);
+				sum += this[i];
+			}
+		}
+		alert(`Sum of numbers divisible by ${n} is ${sum}`);
+	}
+	
+	let result = arrOb.sumDivisible(3);
+	console.log(result);
+</script>
+	
+</body>
+</html>

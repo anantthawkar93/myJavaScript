@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Asssignment3</title>
+</head>
+<body>
+	<script>
+	//finding  second largest function
+	Array.prototype.secondLargest = function() {
+		let secondLargest = 0;
+		let max = Math.max(...this);
+		for(let i = 0; i < this.length; i++) {
+			if(this[i] != max && this[i] > secondLargest) {
+				secondLargest = this[i];
+			}
+		}
+		return secondLargest;
+	}
+	let arrOb = new Array(4,6,9,100,212,201);
+	let result = arrOb.secondLargest();
+	alert(`2-nd largest number in "${arrOb}" is ${result}`);
+	console.log(`2-nd largest number in "${arrOb}" is ${result}`);
+</script>
+</body>
+</html>

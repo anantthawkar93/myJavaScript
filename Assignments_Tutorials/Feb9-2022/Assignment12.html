@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment12</title>
+</head>
+<body>
+	<script>
+	let numOb = new Array(4,5,6,2,1,1,2);
+	Array.prototype.average = function() {
+		let average = 0;
+		let sum = 0;
+		for(let i = 0; i < numOb.length; i++){
+				sum += this[i];
+		}
+			average = sum / this.length;
+			return average;
+	}
+	
+	let result = numOb.average(numOb);
+	alert("Average value is " + result);
+	console.log(result);
+</script>
+
+</body>
+</html>

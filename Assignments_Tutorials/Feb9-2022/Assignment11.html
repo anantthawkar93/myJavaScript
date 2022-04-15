@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Assignment11</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+	let strOb = new String("Find the smallest word in a string");
+	String.prototype.smallestWord = function() {
+		let words = [];
+		let splitword = this.split(' ');
+		//console.log(splitword);
+		console.log(splitword);
+		let smallest = splitword.reduce(function(previous,current) {
+			if(current.length < previous.length) {
+				return current;
+			} else {
+				return previous;
+			}
+		});
+		words = splitword.filter(word => word.length == smallest.length);
+		return words;
+	}
+	
+	let result = strOb.smallestWord();
+	alert(`Smallest word : ${result}`);
+	console.log(result.toString());
+</script>
+	
+</body>
+</html>
