@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment1</title>
+   <link rel="stylesheet" type="text/css" href="Bootstrap/css/bootstrap.css">
+   <script type="text/javascript" src="Bootstrap/js/bootstrap.js"></script>
+</head>
+<body>
+   <!-- 1)This is the sample json data.write a program to print all subjects in a table. (ex maths)
+   -->
+   <table class="table table-bordered"></table>
+   <script type="text/javascript">
+
+      let jsonData = `{"quiz": {"sport": {"q1": {"question": "Which one is correct team name in NBA?","options": ["New York Bulls","Los Angeles Kings","Golden State Warriros","Huston Rocket"],"answer": "Huston Rocket"}},"maths": {"q1": {"question": "5 + 7 = ?","options": ["10","11","12","13"],"answer": "12"},"q2": {"question": "12 - 8 = ?","options": ["1","2","3","4"],"answer": "4"}}}}`;
+
+      let dataOb = JSON.parse(jsonData);
+      console.log(dataOb);
+
+      let tableOb = document.querySelector(".table");
+
+      let tableHead = `<thead><tr><th>Sr.No</th><th>Subjects</th></tr></thead>`;
+      let tableBody = `<tbody>`;
+      let propertyVal = Object.values(dataOb);
+      //alert(JSON.stringify(propertyVal));
+
+      propertyVal.forEach(val =>{
+         let i =1;
+         let propertyOb = Object.keys(val);
+         propertyOb.forEach(val =>{
+
+            tableBody+=`<tr><th>${i++}</th><th>${val}</th></tr>`;
+         })
+      
+      })
+      tableBody+="</tbody>";
+      let netTable = tableHead + tableBody;
+      tableOb.innerHTML = netTable;
+
+
+	</script>
+</body>
+</html>

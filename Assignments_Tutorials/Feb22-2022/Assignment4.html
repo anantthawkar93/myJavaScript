@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignmnet4</title>
+</head>
+<body>
+	<!--write a program where you have a select box with 2 subjects maths and sports. if you select maths then show all questions and their options. same should happen if you select sports option.-->
+	<h3>Select Subject for Quiz:</h3>
+	
+	<select onchange="showData()">
+		
+		<option>maths</option>
+		<option>sport</option>
+	</select>
+	<div id="para"></div>
+	<script type="text/javascript">
+		let jsonData = `{"quiz": {"sport": {"q1": {"question": "Which one is correct team name in NBA?","options": ["New York Bulls","Los Angeles Kings","Golden State Warriros","Huston Rocket"],"answer": "Huston Rocket"}},"maths": {"q1": {"question": "5 + 7 = ?","options": ["10","11","12","13"],"answer": "12"},"q2": {"question": "12 - 8 = ?","options": ["1","2","3","4"],"answer": "4"}}}}`;
+
+      let dataOb = JSON.parse(jsonData);
+      console.log(dataOb);
+
+      //Destructuring above dataOb
+
+      let subDataOb = {sport:{q1:{question:sportsQues1, options:sportsOption1, answer:sportsAns1}={}}, maths:{q1:{question:mathsQues1, options:mathsOption1, answer:mathsAns1}={},q2:{question:mathsQues2, options:mathsOption2, answer:mathsAns2}={}}} = dataOb.quiz;
+
+      	function showData(){
+      		let selectOb = document.querySelector("select");
+
+      		let subjectCount = Object.values(dataOb.quiz[selectOb.value]);
+      		let subOb = [];
+	      	subjectCount.forEach(val =>{
+	      		alert(`Question : ${val.question} \n options : ${val.options}`);
+	      		subOb.push(`Question : ${val.question} <br/> options : ${val.options}`);
+      		})
+      		document.querySelector("#para").innerHTML = subOb;
+
+      	}
+      
+      
+
+      
+
+	</script>
+	
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment6</title>
+</head>
+<body>
+	<!--
+		create a select where you have to show all questions. on selecting a question, you have to show the answer in a div below.
+	-->
+	<h3>Get Answers by Selecting Questions</h3>
+	<select onchange="showAnswer()">
+		<option>Which one is correct team name in NBA?</option>
+		<option>5 + 7 = ?</option>
+		<option>12 - 8 = ?</option>
+	</select>
+	<h3><div id="para"></div><h3>
+
+	<script type="text/javascript">
+
+		let jsonData = `{"quiz": {"sport": {"q1": {"question": "Which one is correct team name in NBA?","options": ["New York Bulls","Los Angeles Kings","Golden State Warriros","Huston Rocket"],"answer": "Huston Rocket"}},"maths": {"q1": {"question": "5 + 7 = ?","options": ["10","11","12","13"],"answer": "12"},"q2": {"question": "12 - 8 = ?","options": ["1","2","3","4"],"answer": "4"}}}}`;
+
+      let dataOb = JSON.parse(jsonData);
+      console.log(dataOb);
+
+      //Destructuring above dataOb
+
+      let subDataOb = {sport:{q1:{question:sportsQues1, options:sportsOption1, answer:sportsAns1}={}}, maths:{q1:{question:mathsQues1, options:mathsOption1, answer:mathsAns1}={},q2:{question:mathsQues2, options:mathsOption2, answer:mathsAns2}={}}} = dataOb.quiz;
+		
+		function showAnswer(){
+
+			 let selectOb = document.querySelector("select");
+			 let divOb = document.querySelector("#para");
+
+			 if(selectOb.value === 'Which one is correct team name in NBA?')
+			 {
+			 	divOb.innerHTML = `Answer : ${sportsAns1}`;
+			 }
+			 else if(selectOb.value === '5 + 7 = ?')
+			 {
+			 	divOb.innerHTML = `Answer : ${mathsAns1}`;
+			 }
+			 else if(selectOb.value === '12 - 8 = ?')
+			 {
+			 	divOb.innerHTML = `Answer : ${mathsAns2}`;
+			 }
+			 else
+			 {
+			 	divOb.innerHTML = `Question not available`;
+			 }
+		}
+	</script>
+</body>
+</html>

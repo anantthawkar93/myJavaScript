@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignmnet5</title>
+</head>
+<body>
+	<!--write a program with a search box. in search box you can enter any option. 
+ex if i search  Golden State Warriros  then i should get the question .-->
+	<h3>Get Questions by Searching Options</h3>
+	<input type="search" name="search" placeholder="Enter the options">
+	<button onclick="searchBox()">Search</button>
+	<script type="text/javascript">
+
+		let jsonData = `{"quiz": {"sport": {"q1": {"question": "Which one is correct team name in NBA?","options": ["New York Bulls","Los Angeles Kings","Golden State Warriros","Huston Rocket"],"answer": "Huston Rocket"}},"maths": {"q1": {"question": "5 + 7 = ?","options": ["10","11","12","13"],"answer": "12"},"q2": {"question": "12 - 8 = ?","options": ["1","2","3","4"],"answer": "4"}}}}`;
+
+      let dataOb = JSON.parse(jsonData);
+      console.log(dataOb);
+
+      //Destructuring above dataOb
+
+      let subDataOb = {sport:{q1:{question:sportsQues1, options:sportsOption1, answer:sportsAns1}={}}, maths:{q1:{question:mathsQues1, options:mathsOption1, answer:mathsAns1}={},q2:{question:mathsQues2, options:mathsOption2, answer:mathsAns2}={}}} = dataOb.quiz;
+		
+		function searchBox(){
+			 let inputOb = document.querySelector("input");
+			 if(sportsOption1.includes(inputOb.value)){
+			 	alert(`Question : ${sportsQues1}`);
+			 }
+			 else if(mathsOption1.includes(inputOb.value))
+			 {
+			 	alert(`Question : ${mathsQues1}`);
+			 }
+			 else if(mathsOption2.includes(inputOb.value))
+			 {
+			 	alert(`Question : ${mathsQues1}`);
+			 }
+			 else
+			 {
+			 	alert(`Option does not match with any Question`)
+			 }
+		}
+	</script>
+
+</body>
+</html>
