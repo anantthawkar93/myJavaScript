@@ -15,3 +15,4 @@ Javascript  Practice Codes
 11. CallBack
 12. Synchronous and Asynchronous Functions
 13. Promises
+14. Destructuring
