@@ -16,3 +16,4 @@ Javascript  Practice Codes
 12. Synchronous and Asynchronous Functions
 13. Promises
 14. Destructuring
+15. Assignments and Tutorials
