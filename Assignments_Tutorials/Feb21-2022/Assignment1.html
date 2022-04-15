@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment1</title>
+</head>
+<body>
+	<body>
+<script type="text/javascript">
+	function randomNo()
+	{
+		let promiseOb =new Promise(function(resolve,reject){
+			setTimeout(function(){
+			let randomno = Math.floor(Math.random()*(17-3+1))+3;
+			resolve(randomno);
+		},3000);
+		})
+		return promiseOb;
+	}
+
+	function primeOrNot(num)
+	{
+		let bool =true;
+		let promiseOb = new Promise(function(resolve,reject){
+			for(i=2;i<=num/2;i++)
+			{
+                 if(num%i == 0)
+                 {
+                 	bool =false;
+                 	break;
+                 }
+			}
+			if(bool)
+			{
+				resolve(num);
+			}
+			else{
+				reject(num);
+			}
+		})
+		return promiseOb;
+	}
+
+
+	let result =randomNo();
+
+	result.then(function(success){
+		return primeOrNot(success)
+	}).then(function(success){
+            alert(`${success} is prime`);
+	}).catch(function(failure){
+            alert(`${failure} is not prime`);
+	})
+</script>
+
+</body>
+
+</body>
+</html>

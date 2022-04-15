@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment3</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function getRandomNo(){
+
+			let promiseOb =new Promise(function(resolve,reject){
+				 let randomNo = Math.floor(Math.random()*10);
+				resolve(randomNo);				
+			})
+			return promiseOb;	
+		}
+
+		function checkEvenOdd(num){
+			let random = Math.floor(Math.random()*(5 - 1) + 1);
+			// alert(random);
+			let promiseOb =new Promise(function(resolve,reject){
+				setTimeout(()=>{
+				if (num%2!=0){
+					
+					console.log(num);
+					console.log(`promise is successful`)
+					resolve(num);
+				} else{
+					console.log(num);
+					console.log(`promise failed`)
+					reject(num);
+				}
+			}, random * 1000)
+			})
+			console.log(`Starting to generate random number,wait for ${random} seconds`);
+
+		}
+		let resultPromiseOne = getRandomNo();
+		
+		resultPromiseOne.then(function(val){
+			let resultPromiseTwo = checkEvenOdd(val);
+			return resultPromiseTwo;
+		})
+		.then(function(val){
+			alert(` The promise is successfull`);
+            console.log(`Number is Odd`);
+		})
+		.catch(function(error){
+			alert(`The promise is failed`);
+            console.log(`Number is even`)
+		})
+		.finally(function(values){
+			alert(`finally operation completed`);
+		});
+		
+	</script>
+
+</body>
+</html>

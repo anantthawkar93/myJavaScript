@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="Bootstrap/css/bootstrap.css">
+	<script type="text/javascript" src="Bootstrap/js/bootstrap.js"></script>
+</head>
+<body onload="loader();">
+<div class="container-fluid">
+	<div id="loader" class="spinner-border text-success" role="status" style="visibility: hidden;">
+  <span class="sr-only"></span>
+</div>
+<br>
+	<button class="btn btn-primary" onclick="randomNumbers();">show random number</button>
+
+	<div id="output" style="color: green;">success for generating even number</div>
+	</div>
+	<script>
+
+		let divOb=document.querySelector("#output");
+		function loader(){
+			let loadingImg=document.querySelector("#loader");
+			loadingImg.style.visibility="hidden";
+		}
+		function randomNumbers(){
+	let promiseOb=new Promise(function(resolve,reject){
+			let loading=document.querySelector("#loader");
+			loading.style.visibility="visible";
+
+			setTimeout(()=>{
+	let randomNos=Math.floor(Math.random()*10);
+			if(randomNos%2==0){
+				resolve(randomNos);
+			}else{
+				reject(randomNos);
+			}
+			},4000);
+		});
+	console.log("generating random numbers,wait for 4 seconds");
+		return promiseOb;	
+}
+
+				let result= randomNumbers();
+		result.then(function(promiseResult){
+			divOb.style.color="green";
+			divOb.innerHTML=`success for generating even number with number = ${randomNos}`;
+			let loadingOne=document.querySelector("#loader");
+				loadingOne.style.visibility="hidden";
+					
+			console.log(promiseResult);
+		});
+		console.log("my call to function is done");
+
+		result.catch(function(errorResult){
+			divOb.style.color="red";
+			let loadingTwo=document.querySelector("#loader");
+			loadingTwo.style.visibility="hidden";
+					
+			console.log(errorResult);
+			divOb.innerHTML=`failed for generating even number with number = ${randomNos}`;
+		});
+
+	</script>
+
+</body>
+</html>

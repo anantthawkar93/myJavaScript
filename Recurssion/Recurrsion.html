@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Recurrsion</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script type="text/javascript">
+		/*Recursion is like loop 
+		Iterate and u have a condition where u stop*/
+
+		function factorial(n)
+			{
+				if(n==1);
+					return 1;
+				let result = 1;
+				result = n*factorial(n-1);
+				return result;
+			}
+			alert(factorial(4));
+
+		function sum(n){
+
+			if(n==1)
+				return 1;
+			let result = 0;
+			result = n+sum(n-1);
+			return result;
+		}
+		alert(sum(4));
+
+	</script>
+	
+</body>
+</html>

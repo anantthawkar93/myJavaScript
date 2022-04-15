@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Tutorial1</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script type="text/javascript">
+
+	// using test before declaring
+	console.log(test); // undefined no declaration and no value is assigned.
+	var test;
+
+	// using test before declaring
+	var test;
+	console.log(test); //  only declared and has no value
+	
+
+	// Note: keyword var is hoisted and let and const does not allow hoisting.
+		a = 5;// Not initialised  but value is assigned.
+		console.log(a);
+		var a; // 5 (Initailisation done after assigning value.)
+	</script>
+	
+</body>
+</html>

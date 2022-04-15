@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Let vs Var- Tutorial2
+    </title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script type="text/javascript">
+	
+		// let is block-scoped. 								var is function scoped.
+		// let does not allow to redeclare variables. 			var allows to redeclare variables.
+		// Hoisting does not occur in let. 						Hoisting occurs in var.
+		function greetVar() {
+			 // variable a can be used here
+			 var a = 'hello';
+			 console.log(a);
+			}
+			// variable a cannot be used here
+			greetVar(); // hello
+
+
+		function greetLet() {
+			 let a = 'hello';
+			 // variable b cannot be used here
+			 if(a == 'hello'){
+			 // variable b can be used here
+			 let b = 'world';
+			 console.log(a + ' ' + b);
+			 }
+			 // variable b cannot be used here
+			 console.log(a + ' ' + b); // error as b is not defined in this block of code.
+			}
+			// variable a cannot be used here
+			greetLet();
+
+			//A variable declared with var can be redeclared again.
+			var a = 5; // 5
+			var a = 3; // 3
+			console.log(a);
+
+			//A let declared with let cannot be redeclared again.
+			let a = 5; // 5
+			let a = 3; // 3
+			console.log(a); // we will get error.
+
+
+	</script>
+	<!-- variable a is declared inside the function and it can be accessed anywhere inside the function ( a becomes
+	function scoped).However the variable b is declared inside the if block statement. b will be block-scoped and can only be accessed inside the if block. -->
+</body>
+</html>

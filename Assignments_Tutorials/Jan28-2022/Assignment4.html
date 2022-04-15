@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+	let num = prompt("To print first 1 prime no.s to be displayed, Enter 10")
+	let sum = 0;
+	function getPrimeNoSum(n) {
+
+		function isPrime(n) {
+			let i = 2;
+			while (i < n) {
+				if (n % i == 0) {
+					return false;
+				}
+				i++;
+			}
+			if (i == n) {
+				return true;
+			}
+		}
+		alert(isPrime(n));
+
+		function firstNoPrime(){
+			let myArr = [];
+			for (let i = 0; i < 30; i++) {
+				if (isPrime(i)==true) {
+					myArr.push(i);
+				}
+			}
+			return myArr;
+		}
+		alert(firstNoPrime());
+
+		function getSquares(inputArray) {
+			let squareArr = []
+	 	 	for(let i = 0; i < inputArray.length; i++) {
+	 	 		squareArr.push(inputArray[i] * inputArray[i]);
+	 	}
+	 	return squareArr;
+	 	alert(getSquares(firstNoPrime()));
+		}
+
+		function arraySum(inputArray) {
+			for(let i = 0; i < inputArray.length; i++) {
+	 	 		sum = sum + inputArray[i];
+	 	 	}
+	 	return sum;
+	 	}
+	 	alert(arraySum(inputArray));
+
+		 let result = firstNoPrime();
+		 alert(result);
+		 let result1 = getSquares(firstNoPrime());
+		 alert(result1);
+		 let finalResult = arraySum(result1);
+		 alert("Array Sum  = " + finalResult);
+	}
+
+getPrimeNoSum(num);
+
+</script>
+	</script>
+	
+</body>
+</html>
