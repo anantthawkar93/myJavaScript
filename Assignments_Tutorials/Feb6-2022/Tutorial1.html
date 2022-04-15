@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script type="text/javascript">
+		//1.Object Destructuring.
+		
+		const myObject = {x:1, y:2};
+		//Destructuring
+		const {x,y} = myObject;
+		alert(x);
+		alert(y);
+		//x is 1, y is 2
+
+		//Destructuring with function arguments having default values.
+
+		/*function myFunction(text="", line = 0, truncate = 100){
+			//with default values we can avoid a bunch of :
+			text = text || "";
+			line = line || 0;
+			truncate = truncate || 100;
+		}
+
+		//but If function takes more than 3 parameters, 
+		//its Best to pass in an Object name 'options' or 'config'.
+
+		function myFunction(config){
+
+		}
+
+		myFunction({
+			text:"";
+			line:0;
+			truncate:100;
+		})
+
+		//Destructuring in javascript function argumnets can be also given as-
+		function myFunction({ text, line, truncate}){
+
+		}
+
+		//To define defaults in the function configuration, use following:
+		function myFunction({
+			text = "",
+			line = 0;
+			truncate = 100;
+		} = {}){...}*/
+	</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>spread Operator:...</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script type="text/javascript">
+		//pass to function that expects separate multiple arguments
+		//much like Function.prototype.apply() does
+
+		let numbers = [9, 4, 7, 1];
+		let minNum = Math.min(...numbers);
+		alert(minNum);
+
+		//Convert Nodelist to Array
+		let divsArray = [...document.querySelectorAll('div')];
+
+		//convert Arguments to Array
+		let argsArray = [...arguments];
+		//thus helps in converting iterable objects(Nodelists, arguments, etc) to true arrays.
+		 
+	</script>
+</body>
+</html>
