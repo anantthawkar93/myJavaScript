@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Assignment-4</title>
+    <link rel="stylesheet" type="text/css" href="Bootstrap/css/bootstrap.css">
+</head>
+<body>
+
+    <table class="table"></table>
+
+    <script type="text/javascript">
+   let personDetails ={
+                               "name":"Jatin",
+                               "locationone":"chennai",
+                               "hobbies":["reading","Writing"],
+                               "personalInfo":{
+                                   "age":22,
+                                   "bankacc":12312,
+                                   "pan":"asfas12",
+                                   "abouthome":{
+                                       native:"Bangalore",
+                                       state:"Karnataka"
+                                   }	
+                               }
+                        }
+   //Destructurinb the complex
+   let {name="Default name",locationone="Default location",hobbies="Default hobbies",personalInfo:{age="Default age",bankacc="Default bankacc",pan="Default pan",abouthome:{native="Default native",state="Default state"}={}}={}} =personDetails;
+
+   let tabelObj =document.querySelector(".table");
+   let tableHead ="<thead><tr><th>Properties</th><th>Values</th></tr></thead>";
+   let tableBody =`<tbody><tr><td>Name</td><td>${name}</td></tr><tr><td>Location</td><td>${locationone}</td></tr><tr><td>Hobbies</td><td>${hobbies}</td></tr><tr><td>Age</td><td>${age}</td></tr><tr><td>Bankacc</td><td>${bankacc}</td></tr><tr><td>PAN</td><td>${pan}</td></tr><tr><td>Native</td><td>${native}</td></tr><tr><td>State</td><td>${state}</td></tr></tbody>`;
+   let netTable =tableHead + tableBody;
+    tabelObj.innerHTML = netTable;				 
+</script>
+</body>
+</html>
