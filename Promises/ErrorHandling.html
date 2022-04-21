@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Error Handling</title>
+</head>
+<body>
+	<p>Using <b>try</b> and <b>catch</b> to display an error.</p>
+	<p id="para"></p>
+
+	<script>
+		/*Error handling in javascript can be done using try and catch function. These functions are usally comes in a pair.
+		The try statement allows to define a block of code to be tested for errors while it is being executed.
+		The catch statement allows to define a block of code to be executed, if an error occurs in the try block.
+
+		Example:*/
+		try {
+			//alert("Welcome guest!");
+		  adddert("Welcome guest!"); //error in this line
+		}
+		catch(err) {
+		  document.getElementById("para").innerHTML = err.message; // inspite of error, below code is executed.
+		}
+	</script>
+</body>
+</html>
